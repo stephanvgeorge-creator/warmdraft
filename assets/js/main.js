@@ -1,54 +1,56 @@
-\
+// main.js - menu, mobile slide, scroll reveal, form toggles
 document.addEventListener('DOMContentLoaded', function(){
-  // mobile slide menu toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  toggle && toggle.addEventListener('click', ()=> nav.classList.toggle('active'));
+  // mobile menu slide-in
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  if(menuToggle && mobileNav){
+    menuToggle.addEventListener('click', ()=> mobileNav.classList.toggle('open'));
+  }
 
-  // dropdowns collapsible on mobile
-  document.querySelectorAll('.nav .dropdown > a').forEach(a=>{
-    a.addEventListener('click', function(e){
-      if(window.innerWidth <= 900){
-        e.preventDefault();
-        const menu = this.nextElementSibling;
-        if(menu){
-          menu.classList.toggle('open');
-          if(menu.classList.contains('open')) menu.style.maxHeight = menu.scrollHeight + 'px';
-          else menu.style.maxHeight = null;
-        }
+  // mobile dropdown toggles
+  document.querySelectorAll('.mobile-dropdown button').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      const parent = btn.parentElement;
+      parent.classList.toggle('open');
+    });
+  });
+
+  // click-to-call behavior: dial on mobile, go to contact on desktop/tablet
+  document.querySelectorAll('.call-action, .call-btn').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(ua);
+      if(isMobile){
+        // if element has href tel, allow default. Otherwise redirect to tel.
+        if(el.tagName.toLowerCase() === 'a' && el.href.startsWith('tel:')) return;
+        window.location.href = 'tel:08007566748';
+      } else {
+        // desktop -> contact page
+        if(!el.closest('a')) e.preventDefault();
+        window.location.href = 'contact.html';
       }
     });
   });
 
-  // IntersectionObserver for tiles (fade/slide/zoom)
-  const cards = document.querySelectorAll('.card');
-  if('IntersectionObserver' in window){
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(ent => {
-        if(ent.isIntersecting){
-          ent.target.classList.add('visible');
-          obs.unobserve(ent.target);
-        }
-      });
-    }, {threshold:0.15});
-    cards.forEach(c=>obs.observe(c));
-  } else { cards.forEach(c=>c.classList.add('visible')); }
-
-  // call button behaviour (mobile dialer vs desktop redirect)
-  document.querySelectorAll('.call-action').forEach(btn=>{
-    btn.addEventListener('click', function(e){
-      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-      if(isMobile){ window.location.href = 'tel:08007566748'; } else { window.location.href = 'contact.html'; }
+  // IntersectionObserver for reveal animations (cards)
+  const observerOptions = { threshold: 0.12 };
+  const observer = new IntersectionObserver((entries, obs)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
     });
-  });
+  }, observerOptions);
+  document.querySelectorAll('.card').forEach(c => observer.observe(c));
 
-  // Book Online reveal and conditional address logic
+  // Book form reveal / conditional fields (book-a-visit page)
   const bookBtn = document.getElementById('book-online-btn');
-  const bookForm = document.getElementById('book-form-panel');
-  if(bookBtn && bookForm){
-    bookBtn.addEventListener('click', ()=>{
-      bookForm.style.display = (bookForm.style.display==='block')? 'none':'block';
-      bookForm.scrollIntoView({behavior:'smooth'});
+  const bookPanel = document.getElementById('book-form-panel');
+  if(bookBtn && bookPanel){
+    bookBtn.addEventListener('click', ()=> {
+      bookPanel.style.display = (bookPanel.style.display === 'block') ? 'none' : 'block';
+      if(bookPanel.style.display === 'block') bookPanel.scrollIntoView({behavior:'smooth', block:'center'});
     });
   }
   const landlordCheckbox = document.querySelector('input[name="is_landlord"]');
@@ -60,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function(){
   const faultDiv = document.getElementById('faultcode');
   if(serviceSelect && faultDiv){
     serviceSelect.addEventListener('change', function(){
-      faultDiv.style.display = (this.value==='Breakdowns')? 'block':'none';
-      if(this.value==="Landlord's Certificate (CP12)") addAddr.style.display='block';
+      faultDiv.style.display = (this.value === 'Breakdowns') ? 'block' : 'none';
+      if(this.value === "Landlord's Certificate (CP12)") addAddr.style.display = 'block';
     });
   }
 });
