@@ -4,92 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | WarmRight Ltd</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 900, once: true });
-
-  // Mobile menu toggle
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav-links');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-  }
-
-  // Mobile dropdown toggle
-  document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', e => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('active');
-      }
-    });
-  });
-</script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
+
 <body>
-  <header class="navbar">
-    <div class="logo">WarmRight Ltd<br><small>Gas, LPG & Oil</small></div>
-    <nav>
-      <ul>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html"><img src="assets/images/logo.png" alt="WarmRight Ltd Logo" /></a>
+      </div>
+      <div class="menu-toggle">☰</div>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li class="dropdown">
-          <a href="#">Services ▾</a>
-          <ul class="dropdown-content">
-            <li><a href="services.html">Overview</a></li>
-          </ul>
+          <a href="#">Services</a>
+          <div class="dropdown-content">
+            <a href="boiler-installations.html">Boiler Installations</a>
+            <a href="heating-repairs.html">Heating Repairs</a>
+            <a href="gas-certificates.html">Gas Certificates</a>
+          </div>
         </li>
         <li class="dropdown">
-          <a href="#">General Info ▾</a>
-          <ul class="dropdown-content">
-            <li><a href="safety.html">Safety</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
+          <a href="#">General Info</a>
+          <div class="dropdown-content">
+            <a href="book-a-visit.html">Book a Visit</a>
+            <a href="contact.html">Contact</a>
+          </div>
         </li>
-        <li><a href="book.html">Book a Visit</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
-    <a href="tel:08007567478" class="cta-button">Click to Call</a>
   </header>
 
-  <section class="hero small" style="background-image: url('images/contact-hero.jpg');">
-    <h1>General Enquiry</h1>
+  <section class="page-header" style="background-image: url('assets/images/contact-bg.jpg');">
+    <h1 data-aos="fade-up">Contact WarmRight Ltd</h1>
+    <p data-aos="fade-up" data-aos-delay="200">We’re here to help with your heating, plumbing, and gas needs.</p>
   </section>
 
-  <section class="container form-section">
-    <div class="contact-info" data-aos="fade-up">
-      <p><strong>Phone:</strong> <a href="tel:08007567478">0800 756 6748</a></p>
-      <p><strong>Email:</strong> <a href="mailto:stephanvgeorge@gmail.com">stephanvgeorge@gmail.com</a></p>
-      <p><strong>Hours:</strong> 7am – 6pm, Mon–Sat</p>
-    </div>
+  <section class="contact-content">
+    <form action="mailto:stephanvgeorge@gmail.com" method="post" enctype="text/plain" data-aos="fade-up">
+      <fieldset>
+        <legend>Your Details</legend>
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required />
 
-    <form action="https://formspree.io/f/xjkalnqv" method="POST" data-aos="fade-up">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="_replyto" required />
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" />
+      </fieldset>
 
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="subject" />
+      <fieldset>
+        <legend>Your Message</legend>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" />
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required></textarea>
+      </fieldset>
 
-      <button type="submit">Send Message</button>
+      <div class="center-button">
+        <input type="submit" value="Send Message" />
+      </div>
     </form>
+
+    <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+      <h3>Our Contact Details</h3>
+      <p><strong>Email:</strong> <a href="mailto:stephanvgeorge@gmail.com">stephanvgeorge@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+447000000000">+44 7000 000000</a></p>
+      <p><strong>Address:</strong> WarmRight Ltd, London, UK</p>
+      <p><strong>Business Hours:</strong><br> Mon–Fri: 8:00am – 6:00pm<br> Sat: 9:00am – 1:00pm</p>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 WarmRight Ltd | Version 1.1</p>
+    <p>&copy; 2025 WarmRight Ltd. All rights reserved.</p>
+    <p class="version">Version 1.2</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 900, once: true });
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => nav.classList.toggle('active'));
+
+    document.querySelectorAll('.dropdown > a').forEach(link => {
+      link.addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          link.parentElement.classList.toggle('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>
