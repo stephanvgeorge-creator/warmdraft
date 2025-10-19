@@ -1,72 +1,117 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home - WarmRight Ltd</title><link rel="icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/style.css"></head><body>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 900, once: true });
-
-  // Mobile menu toggle
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav-links');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-  }
-
-  // Mobile dropdown toggle
-  document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', e => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        link.parentElement.classList.toggle('active');
-      }
-    });
-  });
-</script>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WarmRight Ltd — Home</title>
+  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
   <header class="header">
-  <div class="header-inner container">
-    <div class="logo">
-      <img src="assets/images/logo-warmright.png" alt="WarmRight logo">
-      <div style="color:#fff">
-        <strong>WarmRight Ltd</strong><div style="font-size:12px;color:#d6ecff">Gas, LPG &amp; Oil</div>
+    <div class="header-inner container">
+      <div class="brand">
+        <img src="assets/images/logo-warmright.png" alt="WarmRight logo">
+        <div>
+          <div class="brand-title">WarmRight Ltd</div>
+          <div class="brand-sub">Gas, LPG &amp; Oil</div>
+        </div>
+      </div>
+
+      <button class="menu-toggle">☰</button>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+          <a href="services.html">Services ▾</a>
+          <div class="dropdown-menu">
+            <a href="breakdowns.html">Breakdowns</a>
+            <a href="annual-servicing.html">Annual Servicing</a>
+            <a href="powerflushing-descaling.html">Powerflushing &amp; Descaling</a>
+            <a href="unvented-cylinders.html">Unvented Cylinders</a>
+            <a href="combination-condensing.html">Combination &amp; Condensing</a>
+            <a href="landlord-cp12.html">Landlord CP12</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <a href="general-info.html">General Info ▾</a>
+          <div class="dropdown-menu">
+            <a href="common-faults.html">Common Faults</a>
+            <a href="manuals.html">Manuals</a>
+            <a href="engineers.html">Engineers</a>
+          </div>
+        </div>
+
+        <a href="book-a-visit.html">Book a Visit</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a class="call-action call-btn">Click to Call</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- mobile nav -->
+  <div class="mobile-nav" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <div class="mobile-dropdown">
+      <button>Services</button>
+      <div class="mobile-dropdown-menu">
+        <a href="breakdowns.html">Breakdowns</a>
+        <a href="annual-servicing.html">Annual Servicing</a>
+        <a href="powerflushing-descaling.html">Powerflushing</a>
       </div>
     </div>
-    <button class="nav-toggle" aria-label="toggle menu">☰</button>
-    <nav class="nav" aria-label="Main menu">
-      <a href="index.html">Home</a>
-      <div class="dropdown"><a href="services.html">Services ▾</a>
-        <div class="dropdown-menu">
-          <a href="breakdowns.html">Breakdowns</a>
-          <a href="annual-servicing.html">Annual Servicing</a>
-          <a href="powerflushing-descaling.html">Powerflushing &amp; Descaling</a>
-          <a href="unvented-cylinders.html">Unvented Cylinders</a>
-          <a href="combination-condensing.html">Combination &amp; Condensing</a>
-          <a href="landlord-cp12.html">Landlord CP12</a>
-          <a href="boiler-installation.html">Boiler Installation</a>
-          <a href="general-maintenance.html">General &amp; Planned Maintenance</a>
-          <a href="kitchens-bathrooms.html">Kitchens, Bathrooms &amp; Plumbing</a>
-          <a href="energy-efficiency.html">Energy Efficiency Surveys</a>
-        </div>
+    <div class="mobile-dropdown">
+      <button>General Info</button>
+      <div class="mobile-dropdown-menu">
+        <a href="common-faults.html">Common Faults</a>
+        <a href="manuals.html">Manuals</a>
+        <a href="engineers.html">Engineers</a>
       </div>
-      <div class="dropdown"><a href="general-info.html">General Info ▾</a>
-        <div class="dropdown-menu">
-          <a href="common-faults.html">Common Faults</a>
-          <a href="manuals.html">Manuals</a>
-          <a href="engineers.html">Engineers</a>
-          <a href="partners.html">Partners</a>
-        </div>
-      </div>
-      <a href="book-a-visit.html">Book a Visit</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a class="call-action call-btn">Click to Call</a>
-    </nav>
+    </div>
+    <a href="book-a-visit.html">Book a Visit</a>
+    <a href="contact.html">Contact</a>
   </div>
-</header>
 
-<section class="hero" style="background-image:url('assets/images/home-hero.jpg')"><div class="inner container"><h1>Home</h1></div></section>
-<main class="container section">
-<h2>Welcome to WarmRight</h2><p>Your trusted local heating and plumbing specialists.</p><div class='tiles'><a class='card-link' href='breakdowns.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/breakdowns.jpg' alt='Breakdowns'><div class='card-body'><h3>Breakdowns</h3><p>Click to read more about Breakdowns.</p></div></article></a><a class='card-link' href='annual-servicing.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/annual-servicing.jpg' alt='Annual Servicing'><div class='card-body'><h3>Annual Servicing</h3><p>Click to read more about Annual Servicing.</p></div></article></a><a class='card-link' href='powerflushing-descaling.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/powerflushing.jpg' alt='Powerflushing'><div class='card-body'><h3>Powerflushing</h3><p>Click to read more about Powerflushing.</p></div></article></a><a class='card-link' href='unvented-cylinders.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/unvented-cylinders.jpg' alt='Unvented Cylinders'><div class='card-body'><h3>Unvented Cylinders</h3><p>Click to read more about Unvented Cylinders.</p></div></article></a><a class='card-link' href='combination-condensing.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/combination-boilers.jpg' alt='Combination Boilers'><div class='card-body'><h3>Combination Boilers</h3><p>Click to read more about Combination Boilers.</p></div></article></a><a class='card-link' href='boiler-installation.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/boiler-installation.jpg' alt='Boiler Installation'><div class='card-body'><h3>Boiler Installation</h3><p>Click to read more about Boiler Installation.</p></div></article></a></div>
-</main>
-<footer class="footer container">© WarmRight Ltd — Gas Safe Register — General Enquiries 7am - 6pm, Monday to Saturday | 24/7 Emergency: 08007566736<div class="version-tag">WarmRight Ltd v1.0</div></footer>
-<script src="assets/js/main.js"></script></body></html>
+  <section class="hero" style="background-image:url('assets/images/home-hero.jpg')">
+    <div class="inner container">
+      <h1>WarmRight Ltd</h1>
+      <p>Reliable heating & plumbing across Kent, South East London & East Sussex.</p>
+    </div>
+  </section>
+
+  <main class="container section">
+    <h2>Our Services</h2>
+    <div class="tiles">
+      <a class="card-link" href="breakdowns.html">
+        <article class="card"><img src="assets/images/breakdowns.jpg" alt="Breakdowns"><div class="card-body"><h3>Breakdowns</h3><p>Rapid response for boiler breakdowns.</p></div></article>
+      </a>
+      <a class="card-link" href="annual-servicing.html">
+        <article class="card"><img src="assets/images/annual-servicing.jpg" alt="Annual Servicing"><div class="card-body"><h3>Annual Servicing</h3><p>Keep your boiler safe and efficient.</p></div></article>
+      </a>
+      <a class="card-link" href="powerflushing-descaling.html">
+        <article class="card"><img src="assets/images/powerflushing.jpg" alt="Powerflushing"><div class="card-body"><h3>Powerflushing &amp; Descaling</h3><p>Restore system performance.</p></div></article>
+      </a>
+      <a class="card-link" href="unvented-cylinders.html">
+        <article class="card"><img src="assets/images/unvented-cylinders.jpg" alt="Unvented"><div class="card-body"><h3>Unvented Cylinders</h3><p>Installation & maintenance.</p></div></article>
+      </a>
+      <a class="card-link" href="combination-condensing.html">
+        <article class="card"><img src="assets/images/combination-boilers.jpg" alt="Combination"><div class="card-body"><h3>Combination Boilers</h3><p>Combi & condensing specialists.</p></div></article>
+      </a>
+      <a class="card-link" href="boiler-installation.html">
+        <article class="card"><img src="assets/images/boiler-installation.jpg" alt="Installation"><div class="card-body"><h3>Boiler Installation</h3><p>New boiler installs & upgrades.</p></div></article>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © WarmRight Ltd — Gas Safe Register — General Enquiries 7am - 6pm, Mon - Sat | 24/7 Emergency: 08007566736
+    <div class="version-tag">WarmRight Ltd v1.3</div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
