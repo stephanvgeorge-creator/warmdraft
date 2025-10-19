@@ -1,49 +1,70 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Services - WarmRight Ltd</title><link rel="icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/style.css"></head><body>
-<header class="header">
-  <div class="header-inner container">
-    <div class="logo">
-      <img src="assets/images/logo-warmright.png" alt="WarmRight logo">
-      <div style="color:#fff">
-        <strong>WarmRight Ltd</strong><div style="font-size:12px;color:#d6ecff">Gas, LPG &amp; Oil</div>
-      </div>
-    </div>
-    <button class="nav-toggle" aria-label="toggle menu">☰</button>
-    <nav class="nav" aria-label="Main menu">
-      <a href="index.html">Home</a>
-      <div class="dropdown"><a href="services.html">Services ▾</a>
-        <div class="dropdown-menu">
-          <a href="breakdowns.html">Breakdowns</a>
-          <a href="annual-servicing.html">Annual Servicing</a>
-          <a href="powerflushing-descaling.html">Powerflushing &amp; Descaling</a>
-          <a href="unvented-cylinders.html">Unvented Cylinders</a>
-          <a href="combination-condensing.html">Combination &amp; Condensing</a>
-          <a href="landlord-cp12.html">Landlord CP12</a>
-          <a href="boiler-installation.html">Boiler Installation</a>
-          <a href="general-maintenance.html">General &amp; Planned Maintenance</a>
-          <a href="kitchens-bathrooms.html">Kitchens, Bathrooms &amp; Plumbing</a>
-          <a href="energy-efficiency.html">Energy Efficiency Surveys</a>
-        </div>
-      </div>
-      <div class="dropdown"><a href="general-info.html">General Info ▾</a>
-        <div class="dropdown-menu">
-          <a href="common-faults.html">Common Faults</a>
-          <a href="manuals.html">Manuals</a>
-          <a href="engineers.html">Engineers</a>
-          <a href="partners.html">Partners</a>
-        </div>
-      </div>
-      <a href="book-a-visit.html">Book a Visit</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a class="call-action call-btn">Click to Call</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | WarmRight Ltd</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">WarmRight Ltd<br><small>Gas, LPG & Oil</small></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Services ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="services.html">Overview</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">General Info ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        <li><a href="book.html">Book a Visit</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-  </div>
-</header>
+    <a href="tel:08007567478" class="cta-button">Click to Call</a>
+  </header>
 
-<section class="hero" style="background-image:url('assets/images/services-hero.jpg')"><div class="inner container"><h1>Services</h1></div></section>
-<main class="container section">
-<div class='tiles'><a class='card-link' href='breakdowns.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/breakdowns.jpg' alt='Breakdowns'><div class='card-body'><h3>Breakdowns</h3><p>Details about Breakdowns.</p></div></article></a><a class='card-link' href='annual-servicing.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/annual-servicing.jpg' alt='Annual Servicing'><div class='card-body'><h3>Annual Servicing</h3><p>Details about Annual Servicing.</p></div></article></a><a class='card-link' href='powerflushing-descaling.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/powerflushing.jpg' alt='Powerflushing'><div class='card-body'><h3>Powerflushing</h3><p>Details about Powerflushing.</p></div></article></a><a class='card-link' href='unvented-cylinders.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/unvented-cylinders.jpg' alt='Unvented Cylinders'><div class='card-body'><h3>Unvented Cylinders</h3><p>Details about Unvented Cylinders.</p></div></article></a><a class='card-link' href='combination-condensing.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/combination-boilers.jpg' alt='Combination Boilers'><div class='card-body'><h3>Combination Boilers</h3><p>Details about Combination Boilers.</p></div></article></a><a class='card-link' href='boiler-installation.html' style='text-decoration:none;color:inherit'><article class='card'><img src='assets/images/boiler-installation.jpg' alt='Boiler Installation'><div class='card-body'><h3>Boiler Installation</h3><p>Details about Boiler Installation.</p></div></article></a></div>
-</main>
-<footer class="footer container">© WarmRight Ltd — Gas Safe Register — General Enquiries 7am - 6pm, Monday to Saturday | 24/7 Emergency: 08007566736<div class="version-tag">WarmRight Ltd v1.0</div></footer>
-<script src="assets/js/main.js"></script></body></html>
+  <section class="hero small" style="background-image: url('images/service-hero.jpg');">
+    <h1>Services</h1>
+  </section>
+
+  <section class="services-list container">
+    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="images/boiler.jpg" alt="Boiler Installation" />
+      <h3>Boiler Installations</h3>
+      <p>Expert installation of efficient gas, LPG, and oil boilers to suit your home and budget.</p>
+    </div>
+
+    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="images/repairs.jpg" alt="Repairs" />
+      <h3>Repairs & Maintenance</h3>
+      <p>Fast, reliable repair and servicing to keep your heating system running smoothly.</p>
+    </div>
+
+    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="images/landlord.jpg" alt="Landlord Gas Safety" />
+      <h3>Landlord Safety Certificates</h3>
+      <p>Gas Safe checks and certification for landlords and property managers.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 WarmRight Ltd | Version 1.1</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>
