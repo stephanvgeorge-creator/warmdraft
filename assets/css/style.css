@@ -1,103 +1,153 @@
-/* -------------------------
-   Base Styles
--------------------------- */
-body {
+/* ---------- RESET ---------- */
+* {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f4f4f4;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
   color: #333;
+  background-color: #f8f8f8;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
 
-/* -------------------------
-   Header
--------------------------- */
-.header {
-  background-color: #0b5ed7;
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background-color: #0a2c66;
   color: #fff;
-  padding: 10px 0;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
 }
 
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.brand {
+.navbar .logo {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.brand-title {
+.navbar .logo img {
+  width: 45px;
+  height: 45px;
+}
+
+.navbar .logo h1 {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-.brand-sub {
-  font-size: 0.9rem;
-  opacity: 0.9;
+.navbar .logo span {
+  display: block;
+  font-size: 0.8rem;
+  color: #d0d6e2;
 }
 
-nav ul {
-  list-style: none;
+.navbar ul {
   display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+  list-style: none;
+  gap: 20px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  color: #fff;
   font-weight: 500;
+  padding: 6px 10px;
   transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #ffe98a;
+.navbar ul li a:hover {
+  color: #ffcc00;
 }
 
-/* -------------------------
-   Mobile Menu
--------------------------- */
+/* Dropdown */
+.navbar ul li ul {
+  display: none;
+  position: absolute;
+  background-color: #0a2c66;
+  top: 40px;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 6px;
+  min-width: 160px;
+}
+
+.navbar ul li:hover ul {
+  display: block;
+}
+
+.navbar ul li ul li {
+  padding: 6px 12px;
+}
+
+.navbar ul li ul li a {
+  color: #fff;
+}
+
+.navbar ul li ul li a:hover {
+  color: #ffcc00;
+}
+
+/* ---------- MOBILE MENU ---------- */
 .menu-toggle {
   display: none;
-  background: none;
+  background-color: #0a2c66;
   border: none;
-  color: #fff;
+  color: white;
   font-size: 1.8rem;
   cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
+  .navbar ul {
     display: none;
     flex-direction: column;
-    background-color: #0b5ed7;
     width: 100%;
-    text-align: center;
+    background-color: #0a2c66;
+    position: absolute;
+    top: 65px;
+    left: 0;
   }
 
-  nav ul.active {
+  .navbar ul.active {
     display: flex;
-    animation: slideDown 0.3s ease forwards;
+    animation: slideDown 0.3s ease;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar ul li ul {
+    position: static;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   @keyframes slideDown {
@@ -112,62 +162,63 @@ nav a:hover {
   }
 }
 
-/* -------------------------
-   Hero Section
--------------------------- */
+/* ---------- HERO SECTION ---------- */
 .hero {
   position: relative;
   text-align: center;
   color: white;
+  background: url('assets/hero.jpg') center/cover no-repeat;
+  padding: 100px 20px;
 }
 
-.hero img {
-  width: 100%;
-  height: auto;
-}
-
-.hero-content {
+.hero::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.45);
 }
 
-.hero-content h1 {
+.hero h1, .hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
   font-size: 2.2rem;
-  margin: 0;
+  font-weight: bold;
 }
 
-.hero-content p {
-  font-size: 1rem;
-  opacity: 0.9;
+.hero p {
+  font-size: 1.1rem;
+  margin-top: 10px;
 }
 
-/* -------------------------
-   Services Section
--------------------------- */
+/* ---------- SERVICES SECTION ---------- */
 .services {
   padding: 40px 20px;
-  background-color: white;
-  text-align: center;
+  background-color: #fff;
 }
 
 .services h2 {
-  font-size: 1.8rem;
+  text-align: center;
   margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #222;
 }
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
 .service-tile {
-  background-color: #fafafa;
-  border-radius: 10px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -176,41 +227,35 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.service-tile a {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-}
-
 .service-tile img {
   width: 100%;
-  border-bottom: 2px solid #ddd;
+  height: 180px;
+  object-fit: cover;
 }
 
 .service-tile h3 {
-  font-size: 1.2rem;
-  color: #0b5ed7;
+  color: #0a2c66;
+  font-size: 1.1rem;
   margin: 15px 0 5px;
 }
 
 .service-tile p {
-  margin: 0 0 15px;
   color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
 }
 
-/* -------------------------
-   Footer
--------------------------- */
+/* ---------- FOOTER ---------- */
 footer {
-  background-color: #0b5ed7;
-  color: white;
+  background-color: #0a2c66;
+  color: #fff;
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
 }
 
 footer a {
-  color: #ffe98a;
+  color: #ffcc00;
   text-decoration: none;
 }
 
