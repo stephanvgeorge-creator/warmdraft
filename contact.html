@@ -1,104 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | WarmRight Ltd</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — WarmRight Ltd</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <a href="index.html"><img src="assets/images/logo.png" alt="WarmRight Ltd Logo" /></a>
+  <!-- header same -->
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">
+        <img src="assets/images/logo-warmright.png" alt="WarmRight logo">
+        <div>
+          <div class="brand-title">WarmRight Ltd</div>
+          <div class="brand-sub">Gas, LPG &amp; Oil</div>
+        </div>
       </div>
-      <div class="menu-toggle">☰</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="#">Services</a>
-          <div class="dropdown-content">
-            <a href="boiler-installations.html">Boiler Installations</a>
-            <a href="heating-repairs.html">Heating Repairs</a>
-            <a href="gas-certificates.html">Gas Certificates</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="#">General Info</a>
-          <div class="dropdown-content">
-            <a href="book-a-visit.html">Book a Visit</a>
-            <a href="contact.html">Contact</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
+      <button class="menu-toggle">☰</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <div class="dropdown"><a href="services.html">Services ▾</a>
+          <div class="dropdown-menu"><a href="breakdowns.html">Breakdowns</a><a href="annual-servicing.html">Annual</a></div>
+        </div>
+        <div class="dropdown"><a href="general-info.html">General Info ▾</a>
+          <div class="dropdown-menu"><a href="manuals.html">Manuals</a><a href="engineers.html">Engineers</a></div>
+        </div>
+        <a href="book-a-visit.html">Book a Visit</a>
+        <a href="about.html">About</a>
+        <a class="call-action call-btn">Click to Call</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="page-header" style="background-image: url('assets/images/contact-bg.jpg');">
-    <h1 data-aos="fade-up">Contact WarmRight Ltd</h1>
-    <p data-aos="fade-up" data-aos-delay="200">We’re here to help with your heating, plumbing, and gas needs.</p>
-  </section>
-
-  <section class="contact-content">
-    <form action="mailto:stephanvgeorge@gmail.com" method="post" enctype="text/plain" data-aos="fade-up">
-      <fieldset>
-        <legend>Your Details</legend>
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" />
-      </fieldset>
-
-      <fieldset>
-        <legend>Your Message</legend>
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" />
-
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" required></textarea>
-      </fieldset>
-
-      <div class="center-button">
-        <input type="submit" value="Send Message" />
-      </div>
-    </form>
-
-    <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
-      <h3>Our Contact Details</h3>
-      <p><strong>Email:</strong> <a href="mailto:stephanvgeorge@gmail.com">stephanvgeorge@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+447000000000">+44 7000 000000</a></p>
-      <p><strong>Address:</strong> WarmRight Ltd, London, UK</p>
-      <p><strong>Business Hours:</strong><br> Mon–Fri: 8:00am – 6:00pm<br> Sat: 9:00am – 1:00pm</p>
+  <div class="mobile-nav" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <div class="mobile-dropdown"><button>Services</button>
+      <div class="mobile-dropdown-menu"><a href="breakdowns.html">Breakdowns</a></div>
     </div>
+    <a href="book-a-visit.html">Book a Visit</a>
+    <a href="index.html">Home</a>
+  </div>
+
+  <section class="hero" style="background-image:url('assets/images/contact-bg.jpg')">
+    <div class="inner container"><h1>General Enquiry</h1></div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 WarmRight Ltd. All rights reserved.</p>
-    <p class="version">Version 1.2</p>
+  <main class="container section">
+    <div class="tiles" style="margin-bottom:20px">
+      <div class="tile"><h3>Phone</h3><p><a href="tel:08007566748">0800 756 6748</a></p></div>
+      <div class="tile"><h3>Email</h3><p><a href="mailto:stephanvgeorge@gmail.com">stephanvgeorge@gmail.com</a></p></div>
+      <div class="tile"><h3>Hours</h3><p>General Enquiries 7am - 6pm Mon-Sat</p></div>
+    </div>
+
+    <div class="form-panel" id="contact-form-panel">
+      <form action="https://formspree.io/f/xjkalnqv" method="POST">
+        <fieldset><legend>Your details</legend>
+          <label>Name<input name="name" required></label>
+          <label>Email<input type="email" name="_replyto" required></label>
+          <label>Subject<input name="subject"></label>
+        </fieldset>
+
+        <fieldset><legend>Message</legend>
+          <label>Message<textarea name="message" required></textarea></label>
+        </fieldset>
+
+        <input type="hidden" name="_replyto" value="stephanvgeorge@gmail.com">
+        <input type="hidden" name="_next" value="thank-you.html">
+        <div class="center"><button type="submit" class="btn">Send Enquiry</button></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    © WarmRight Ltd — WarmRight Ltd v1.3
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 900, once: true });
-
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => nav.classList.toggle('active'));
-
-    document.querySelectorAll('.dropdown > a').forEach(link => {
-      link.addEventListener('click', e => {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          link.parentElement.classList.toggle('active');
-        }
-      });
-    });
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
