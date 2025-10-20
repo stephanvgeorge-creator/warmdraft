@@ -1,127 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Book a Visit — WarmRight Ltd</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Visit | WarmRight Ltd</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+  <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
-  <!-- header same as index -->
-  <header class="header">
-    <div class="header-inner container">
-      <div class="brand">
-        <img src="assets/images/logo-warmright.png" alt="WarmRight logo">
-        <div>
-          <div class="brand-title">WarmRight Ltd</div>
-          <div class="brand-sub">Gas, LPG &amp; Oil</div>
-        </div>
-      </div>
-
-      <button class="menu-toggle">☰</button>
-
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <a href="services.html">Services ▾</a>
-          <div class="dropdown-menu">
-            <a href="breakdowns.html">Breakdowns</a>
-            <a href="annual-servicing.html">Annual Servicing</a>
-            <a href="powerflushing-descaling.html">Powerflushing</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="general-info.html">General Info ▾</a>
-          <div class="dropdown-menu">
-            <a href="manuals.html">Manuals</a>
-            <a href="engineers.html">Engineers</a>
-          </div>
-        </div>
-        <a href="book-a-visit.html">Book a Visit</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a class="call-action call-btn">Click to Call</a>
-      </nav>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="WarmRight Ltd Logo">
+      <span>WarmRight Ltd</span>
     </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="services.html">Services ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="breakdowns.html">Breakdowns</a></li>
+            <li><a href="annual-servicing.html">Annual Servicing</a></li>
+            <li><a href="powerflushing-descaling.html">Powerflushing & Descaling</a></li>
+            <li><a href="unvented-cylinders.html">Unvented Cylinders</a></li>
+            <li><a href="second-opinion.html">Second Opinion Visits</a></li>
+            <li><a href="combi-condensing.html">Combi & Condensing Boilers</a></li>
+            <li><a href="landlord-cp12.html">Landlord’s Gas Safety (CP12)</a></li>
+            <li><a href="homebuyer-report.html">Homebuyer’s Reports</a></li>
+            <li><a href="boiler-installation.html">Boiler Installation</a></li>
+            <li><a href="general-maintenance.html">General & Planned Maintenance</a></li>
+            <li><a href="kitchens-bathrooms.html">Kitchens, Bathrooms & Plumbing</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="general-info.html">General Information ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="common-faults.html">Common Faults</a></li>
+            <li><a href="powerflushing.html">Powerflushing</a></li>
+            <li><a href="combi-boilers.html">Combi Boilers - Are They Worth It?</a></li>
+            <li><a href="manuals.html">Boiler Manuals</a></li>
+            <li><a href="engineers.html">Engineers</a></li>
+            <li><a href="boiler-scrappage.html">Boiler Scrappage Grants</a></li>
+            <li><a href="partners.html">Partners</a></li>
+          </ul>
+        </li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="book-a-visit.html" class="active">Book a Visit</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="mobile-nav" aria-hidden="true">
-    <a href="index.html">Home</a>
-    <div class="mobile-dropdown"><button>Services</button>
-      <div class="mobile-dropdown-menu"><a href="breakdowns.html">Breakdowns</a><a href="annual-servicing.html">Annual</a></div>
+  <!-- Banner -->
+  <section class="banner fade-in" style="background-image: url('book-banner.jpg');">
+    <div class="banner-text">
+      <h1>Book a Visit</h1>
+      <p>Schedule your service or breakdown appointment easily below.</p>
     </div>
-    <div class="mobile-dropdown"><button>General Info</button>
-      <div class="mobile-dropdown-menu"><a href="manuals.html">Manuals</a><a href="engineers.html">Engineers</a></div>
-    </div>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <section class="hero" style="background-image:url('assets/images/services-hero.jpg')">
-    <div class="inner container"><h1>Book a Visit</h1></div>
   </section>
 
-  <main class="container section">
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px">
-      <div class="tile" style="flex:1;text-align:center">
-        <h3>Call to book (Office hours)</h3>
-        <p>Call us during office hours to schedule a service.</p>
-        <p class="center"><a class="btn secondary" href="tel:08007566748">Call 0800 756 6748</a></p>
+  <!-- Booking Options -->
+  <section class="section fade-in booking-options">
+    <div class="tile-grid">
+      <div class="tile">
+        <h2>Call to Book</h2>
+        <p>To schedule a service or repair during office hours, call us directly.</p>
+        <a href="tel:08007566748" class="btn-primary">Call Now</a>
       </div>
-
-      <div class="tile" style="flex:1;text-align:center">
-        <h3>Emergencies (24/7)</h3>
-        <p>For emergencies call:</p>
-        <p class="center"><a class="btn secondary" href="tel:08007566736">0800 756 6736</a></p>
+      <div class="tile">
+        <h2>Emergency?</h2>
+        <p>For urgent breakdowns or leaks, we’re available 24/7.</p>
+        <a href="tel:08007566748" class="btn-emergency">Emergency Line</a>
       </div>
-
-      <div class="tile" style="flex:1;text-align:center">
-        <h3>Book Online</h3>
-        <p>Request a booking and we will call you back.</p>
-        <p class="center"><button id="book-online-btn" class="btn">Book Online</button></p>
+      <div class="tile">
+        <h2>Book Online</h2>
+        <p>Prefer to request your appointment online? Use our booking form below.</p>
+        <button class="btn-primary" id="openBookingForm">Book Online</button>
       </div>
     </div>
+  </section>
 
-    <div id="book-form-panel" class="form-panel" style="display:none">
-      <form action="https://formspree.io/f/xjkalnqv" method="POST">
-        <fieldset><legend>Your details</legend>
-          <label>Name<input name="name" required></label>
-          <label>Email<input type="email" name="_replyto" required></label>
-          <label>Phone<input name="phone"></label>
-          <label>Postcode (for address finder)<input name="postcode"></label>
+  <!-- Booking Form Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Online Booking Form</h2>
+      <form action="https://formspree.io/f/xjkalnqv" method="POST" class="booking-form">
+        <fieldset>
+          <legend>Your Details</legend>
+          <label for="name">Full Name:</label>
+          <input type="text" name="name" id="name" required>
+          
+          <label for="email">Email Address:</label>
+          <input type="email" name="email" id="email" required>
+          
+          <label for="phone">Phone Number:</label>
+          <input type="tel" name="phone" id="phone" required>
+          
+          <label for="address">Address:</label>
+          <input type="text" name="address" id="address" required>
+          
+          <label for="postcode">Postcode:</label>
+          <input type="text" name="postcode" id="postcode" required>
         </fieldset>
 
-        <label><input type="checkbox" name="is_landlord"> Are you booking for a different property?</label>
-
-        <fieldset id="additional-address" style="display:none"><legend>Address for visit</legend>
-          <label>Property contact name<input name="prop_contact"></label>
-          <label>Property address<input name="prop_address"></label>
-          <label>Property postcode<input name="prop_postcode"></label>
-          <label>Property contact phone<input name="prop_phone"></label>
-          <label>Property contact email<input name="prop_email"></label>
-        </fieldset>
-
-        <fieldset><legend>Service details</legend>
-          <label>Service required
-            <select name="service">
-              <option>Breakdowns</option><option>Annual Servicing</option><option>Landlord's Certificate (CP12)</option><option>Powerflushing</option><option>Boiler Installation</option><option>General Maintenance</option><option>Other</option>
-            </select>
+        <fieldset>
+          <legend>Property for Visit</legend>
+          <label>
+            <input type="checkbox" id="differentAddress" name="differentAddress">
+            Are you booking for a different property?
           </label>
-
-          <div id="faultcode" style="display:none"><label>Fault code<input name="fault_code"></label></div>
-
-          <label>Comments<textarea name="comments"></textarea></label>
+          
+          <div id="extraAddressFields" style="display:none;">
+            <label for="visit-name">Name at Property:</label>
+            <input type="text" id="visit-name" name="visit-name">
+            
+            <label for="visit-phone">Phone Number:</label>
+            <input type="tel" id="visit-phone" name="visit-phone">
+            
+            <label for="visit-address">Address:</label>
+            <input type="text" id="visit-address" name="visit-address">
+            
+            <label for="visit-postcode">Postcode:</label>
+            <input type="text" id="visit-postcode" name="visit-postcode">
+          </div>
         </fieldset>
 
-        <input type="hidden" name="_replyto" value="stephanvgeorge@gmail.com">
-        <input type="hidden" name="_next" value="thank-you.html">
-        <div class="center"><button type="submit" class="btn">Submit Booking</button></div>
+        <fieldset>
+          <legend>Service Details</legend>
+          <label for="service">Select Service:</label>
+          <select id="service" name="service" required>
+            <option value="">Select</option>
+            <option value="Breakdown">Breakdown</option>
+            <option value="Annual Servicing">Annual Servicing</option>
+            <option value="Landlord Certificate">Landlord’s Gas Safety (CP12)</option>
+            <option value="Boiler Installation">Boiler Installation</option>
+            <option value="Powerflushing">Powerflushing</option>
+            <option value="Maintenance">General Maintenance</option>
+            <option value="Other">Other</option>
+          </select>
+          
+          <div id="breakdownDetails" style="display:none;">
+            <label for="fault-code">Fault Code (if applicable):</label>
+            <input type="text" id="fault-code" name="fault-code">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Additional Comments</legend>
+          <textarea name="comments" placeholder="Describe your request or issue..." rows="4"></textarea>
+        </fieldset>
+
+        <button type="submit" class="btn-primary">Submit Booking</button>
       </form>
     </div>
-  </main>
+  </div>
 
+  <!-- Footer -->
   <footer class="footer">
-    © WarmRight Ltd — WarmRight Ltd v1.3
+    <div class="footer-content">
+      <p>&copy; 2025 WarmRight Ltd | Gas Safe Registered: 
+        <a href="https://www.gassaferegister.co.uk" target="_blank">968002</a></p>
+      <img src="gsr-logo.png" alt="Gas Safe Register" class="gsr-logo">
+      <p>General Enquiries: 7am - 6pm, Mon - Sat</p>
+      <p>24/7 Emergencies: <a href="tel:08007566748">0800 756 6748</a></p>
+    </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <!-- Floating Book Button -->
+  <a href="book-a-visit.html" class="float-btn">
+    <img src="phone-icon.png" alt="Phone Icon"> Book Us Now
+  </a>
 </body>
 </html>
