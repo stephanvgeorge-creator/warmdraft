@@ -1,123 +1,96 @@
-/* ===============================
-   WarmRight Ltd v2.3 — main.js
-   =============================== */
+/* === main.js for WarmRight website === */
 
-/* === Scroll Fade-in Animations === */
-const faders = document.querySelectorAll('.fade-in, .tile');
+/* --- HAMBURGER MENU TOGGLE --- */
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.navbar-links');
 
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-
-/* === Dropdown Menu Hover Fix === */
-document.querySelectorAll('.dropdown').forEach(drop => {
-  drop.addEventListener('mouseenter', () => {
-    const menu = drop.querySelector('.dropdown-content');
-    if (menu) menu.style.display = 'block';
-  });
-  drop.addEventListener('mouseleave', () => {
-    const menu = drop.querySelector('.dropdown-content');
-    if (menu) menu.style.display = 'none';
-  });
-});
-
-/* === Mobile Menu Toggle === */
-const mobileMenu = document.querySelector('.nav-links ul');
-const toggleBtn = document.createElement('div');
-toggleBtn.classList.add('menu-toggle');
-toggleBtn.innerHTML = '&#9776;'; // hamburger icon
-
-document.querySelector('.navbar').insertBefore(toggleBtn, document.querySelector('.nav-links'));
-
-toggleBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  toggleBtn.classList.toggle('active');
-});
-
-/* Close mobile menu when link clicked */
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('open')) {
-      mobileMenu.classList.remove('open');
-      toggleBtn.classList.remove('active');
-    }
-  });
-});
-
-/* === Modal Booking Form === */
-const modal = document.querySelector('.modal');
-const openModalBtn = document.querySelector('#openBookingModal');
-const closeModalBtn = document.querySelector('.modal-close');
-
-if (openModalBtn && modal) {
-  openModalBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
 }
 
-if (closeModalBtn && modal) {
-  closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-  });
+/* --- RESPONSIVE CALL NOW BUTTON --- */
+const callButton = document.querySelector('.call-now');
+
+function updateCallButton() {
+  if (!callButton) return;
+  if (window.innerWidth > 768) {
+    // On larger screens, link to the contact page
+    callButton.setAttribute('href', 'contact.html');
+    callButton.textContent = 'Contact Us';
+  } else {
+    // On mobile, trigger a phone call
+    callButton.setAttribute('href', 'tel:08007566748');
+    callButton.textContent = 'Call Now';
+  }
 }
 
-/* Close modal when clicking outside */
-if (modal) {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+updateCallButton();
+window.addEventListener('resize', updateCallButton);
+
+/* --- TILE FADE-IN EFFECT ON SCROLL --- */
+function handleTileVisibility() {
+  const tiles = document.querySelectorAll('.tile');
+  const windowHeight = window.innerHeight;
+
+  tiles.forEach(tile => {
+    const rect = tile.getBoundingClientRect();
+    if (rect.top < windowHeight - 100) {
+      tile.classList.add('visible');
     }
   });
 }
 
-/* === Conditional Address Section (Booking Form) === */
-const altAddressCheckbox = document.querySelector('#differentAddress');
-const altAddressSection = document.querySelector('#altAddressSection');
+window.addEventListener('scroll', handleTileVisibility);
+window.addEventListener('load', handleTileVisibility);
 
-if (altAddressCheckbox && altAddressSection) {
-  altAddressCheckbox.addEventListener('change', () => {
-    if (altAddressCheckbox.checked) {
-      altAddressSection.style.display = 'block';
-    } else {
-      altAddressSection.style.display = 'none';
+/* --- DROPDOWN ACCESSIBILITY (mobile tap support) --- */
+const dropdowns = document.querySelectorAll('.dropdown > a');
+
+dropdowns.forEach(link => {
+  link.addEventListener('click', e => {
+    const dropdownContent = link.nextElementSibling;
+    if (dropdownContent && window.innerWidth <= 768) {
+      e.preventDefault();
+      dropdownContent.classList.toggle('show');
     }
   });
-}
+});
 
-/* === Floating "Book Us Now" Button for mobile/desktop === */
-const bookButton = document.querySelector('.float-btn');
+/* --- CLOSE DROPDOWNS WHEN CLICKING OUTSIDE (mobile only) --- */
+document.addEventListener('click', e => {
+  if (window.innerWidth > 768) return;
+  const isDropdown = e.target.matches('.dropdown > a') || e.target.closest('.dropdown-content');
+  if (!isDropdown) {
+    document.querySelectorAll('.dropdown-content.show').forEach(menu => {
+      menu.classList.remove('show');
+    });
+  }
+});
 
+/* --- BOOK NOW BUTTON (OPTIONAL ANIMATION) --- */
+const bookButton = document.querySelector('.book-now');
 if (bookButton) {
-  bookButton.addEventListener('click', (e) => {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = 'tel:08007566748';
-    } else {
-      window.location.href = 'book-a-visit.html';
-    }
+  bookButton.addEventListener('mouseenter', () => {
+    bookButton.style.transform = 'scale(1.05)';
+  });
+  bookButton.addEventListener('mouseleave', () => {
+    bookButton.style.transform = 'scale(1)';
   });
 }
 
-/* === Auto Redirect for Thank You page === */
-if (window.location.pathname.includes('thank-you.html')) {
-  setTimeout(() => {
-    window.location.href = 'index.html';
-  }, 15000);
-}
+/* --- SMOOTH SCROLL FOR INTERNAL LINKS --- */
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+smoothLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+/* --- SAFETY LOG --- */
+console.log('WarmRight site scripts loaded successfully.');
