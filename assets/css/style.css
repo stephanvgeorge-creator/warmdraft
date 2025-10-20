@@ -1,4 +1,4 @@
-/* === RESET === */
+/* ==== GENERAL RESET ==== */
 * {
   margin: 0;
   padding: 0;
@@ -6,201 +6,266 @@
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #002147;
-  background-color: #f8f9fb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
   line-height: 1.6;
 }
 
-/* === NAVBAR === */
+/* ==== NAVBAR ==== */
 .navbar {
-  background-color: #004aad;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-start;
-  padding: 10px 20px;
-  color: white;
-  position: sticky;
+  background: #004c99;
+  color: #fff;
+  padding: 0.7rem 2rem;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
 .navbar a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  margin: 0 12px;
-  font-weight: 500;
 }
 
 .navbar a:hover {
   text-decoration: underline;
 }
 
-/* Logo and title link home */
-.navbar .logo-link {
+.navbar-logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: white;
 }
-.navbar .logo-link img {
-  height: 35px;
-  margin-right: 8px;
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
 }
-.navbar .logo-link span {
+
+.navbar-logo a {
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* === CALL NOW BUTTON === */
-.call-now {
-  margin-left: auto;
-  background-color: #ffb200;
-  color: #003366;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-.call-now:hover {
-  background-color: #ffd24d;
+.navbar-menu {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
 }
 
-/* === DROPDOWN === */
+.navbar-menu a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: #ffd633;
+}
+
+/* Dropdown */
 .dropdown {
   position: relative;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #004aad;
-  min-width: 220px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  white-space: nowrap;
-  z-index: 10;
+  background-color: #005bb5;
+  min-width: 200px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
 .dropdown-content a {
-  color: white;
   display: block;
-  padding: 10px 16px;
+  padding: 10px;
+  color: #fff;
 }
-.dropdown-content a:hover {
-  background-color: #003580;
-}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* === HAMBURGER MENU === */
-.hamburger {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-left: auto;
+/* Hide dropdown by default (fixes visible-on-load bug) */
+.dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    background-color: #004aad;
-    width: 100%;
-  }
-  .navbar-links.show {
-    display: flex;
-  }
-  .call-now {
-    margin: 10px;
-  }
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
 }
 
-/* === HERO BANNER === */
-.hero-banner {
-  height: 350px;
-  background: url('../images/banner.jpg') center/cover no-repeat;
-}
-@media (min-width: 1024px) {
-  .hero-banner {
-    height: 450px;
-  }
+/* ==== HERO SECTION ==== */
+.hero {
+  background: url('../images/hero.jpg') center/cover no-repeat;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 70px;
 }
 
-/* === SERVICE TILES === */
-.tiles {
+.hero h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+/* ==== SERVICES SECTION ==== */
+.services {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.services h2 {
+  color: #003366;
+  margin-bottom: 1.5rem;
+}
+
+.service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  gap: 20px;
   justify-items: center;
-  padding: 2rem;
-}
-.tile {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(15px);
-}
-.tile.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.tile:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-.tile p {
-  font-size: 0.9rem;
-  color: #333;
-  margin-top: 8px;
 }
 
-/* === BOOK NOW BUTTON === */
-.book-now {
+.service-tile {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.service-tile h3 {
+  color: #004c99;
+  margin-bottom: 0.5rem;
+}
+
+.service-tile p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* ==== FLOATING BUTTONS ==== */
+.book-us-btn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ffb200;
-  color: #003366;
+  bottom: 25px;
+  right: 25px;
+  background: #ff9900;
+  color: #fff;
+  padding: 12px 18px;
   border-radius: 50px;
-  padding: 12px 20px;
-  font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 999;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.book-now img {
-  height: 18px;
-}
-.book-now:hover {
-  background-color: #ffd24d;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
 }
 
-/* === FOOTER === */
-footer {
-  background-color: #004aad;
-  color: white;
-  text-align: center;
-  padding: 20px;
+.book-us-btn:hover {
+  background: #e68a00;
 }
+
+/* ==== CALL BUTTON ==== */
+.call-btn {
+  background: #28a745;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.call-btn:hover {
+  background: #218838;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  background: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  position: relative;
+}
+
+footer img {
+  height: 35px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
 footer a {
-  color: #ffb200;
+  color: #ffd633;
   text-decoration: none;
 }
-footer .gsr-logo {
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 6px;
-}
+
 footer a:hover {
-  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ==== RESPONSIVE RULES ==== */
+
+/* Hide hamburger (3 lines) on tablet and PC */
+.hamburger {
+  display: none;
+}
+
+/* For smaller screens */
+@media screen and (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background: #004c99;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+  }
+
+  /* Mobile: call button becomes direct phone link */
+  .call-btn {
+    background: #ff9900;
+    display: inline-block;
+  }
+}
+
+/* ==== HOVER & INTERACTION TWEAKS ==== */
+a[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 120%;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
 }
