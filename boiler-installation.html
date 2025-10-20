@@ -1,21 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boiler Installation — WarmRight Ltd</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boiler Installation | WarmRight Ltd</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
 <body>
-  <!-- header same as index -->
-  <header class="header">
-    <div class="header-inner container">
-      <div class="brand"><img src="assets/images/logo-warmright.png" alt="logo"><div><div class="brand-title">WarmRight Ltd</div><div class="brand-sub">Gas, LPG &amp; Oil</div></div></div>
-      <button class="menu-toggle">☰</button>
-      <nav class="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a class="call-action call-btn">Click to Call</a></nav>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="WarmRight Ltd Logo">
+      <span>WarmRight Ltd</span>
     </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="services.html" class="active">Services ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="breakdowns.html">Breakdowns</a></li>
+            <li><a href="annual-servicing.html">Annual Servicing</a></li>
+            <li><a href="powerflushing-descaling.html">Powerflushing & Descaling</a></li>
+            <li><a href="unvented-cylinders.html">Unvented Cylinders</a></li>
+            <li><a href="second-opinion.html">Second Opinion Visits</a></li>
+            <li><a href="combi-condensing.html">Combi & Condensing Boilers</a></li>
+            <li><a href="landlord-cp12.html">Landlord’s Gas Safety (CP12)</a></li>
+            <li><a href="homebuyer-report.html">Homebuyer’s Reports</a></li>
+            <li><a href="boiler-installation.html" class="active">Boiler Installation</a></li>
+            <li><a href="general-maintenance.html">General & Planned Maintenance</a></li>
+            <li><a href="kitchens-bathrooms.html">Kitchens, Bathrooms & Plumbing</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="general-info.html">General Information ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="common-faults.html">Common Faults</a></li>
+            <li><a href="powerflushing.html">Powerflushing</a></li>
+            <li><a href="combi-boilers.html">Combi Boilers - Are They Worth It?</a></li>
+            <li><a href="manuals.html">Boiler Manuals</a></li>
+            <li><a href="engineers.html">Engineers</a></li>
+            <li><a href="boiler-scrappage.html">Boiler Scrappage Grants</a></li>
+            <li><a href="partners.html">Partners</a></li>
+          </ul>
+        </li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="book-a-visit.html">Book a Visit</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero" style="background-image:url('assets/images/boiler-installation.jpg')"><div class="inner container"><h1>Boiler Installation</h1></div></section>
+  <!-- Banner -->
+  <section class="banner fade-in" style="background-image: url('service-installation.jpg');">
+    <div class="banner-text">
+      <h1>Boiler Installation</h1>
+      <p>Efficient, professional installations tailored to your home and budget.</p>
+    </div>
+  </section>
 
-  <main class="container section"><h2>Boiler Installation Work</h2><p>We supply and install high-efficiency boilers with full commissioning and Gas Safe certification. Replace with your text.</p></main>
+  <!-- Main Section -->
+  <section class="section fade-in">
+    <h2>New Boilers Fitted by Certified Experts</h2>
+    <p>At WarmRight Ltd, we install modern, energy-efficient boilers designed to 
+    reduce your energy bills and carbon footprint. Whether you're upgrading an old 
+    system or fitting a brand-new one, our Gas Safe engineers ensure safe, compliant, 
+    and long-lasting results.</p>
 
-  <footer class="footer">© WarmRight Ltd — v1.3</footer>
-  <script src="assets/js/main.js"></script>
+    <h3>Our Installation Process</h3>
+    <ul>
+      <li>Free home survey and consultation</li>
+      <li>Professional installation by Gas Safe engineers</li>
+      <li>System testing and efficiency optimisation</li>
+      <li>Manufacturer-backed warranties</li>
+      <li>Old boiler and waste removal</li>
+    </ul>
+
+    <h3>Brands We Trust</h3>
+    <p>We work with all major boiler brands including <strong>Ideal, Vaillant, Worcester Bosch, and Baxi</strong>. 
+    Our team will help you choose the most efficient model for your home and budget.</p>
+
+    <h3>Flexible Options</h3>
+    <p>We offer competitive pricing, finance options, and extended warranties 
+    on selected models. Our focus is on value, reliability, and efficiency for every customer.</p>
+
+    <a href="book-a-visit.html" class="btn-primary">Request a Boiler Installation</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 WarmRight Ltd | Gas Safe Registered: 
+        <a href="https://www.gassaferegister.co.uk" target="_blank">968002</a></p>
+      <img src="gsr-logo.png" alt="Gas Safe Register" class="gsr-logo">
+      <p>General Enquiries: 7am - 6pm, Mon - Sat</p>
+      <p>24/7 Emergencies: <a href="tel:08007566748">0800 756 6748</a></p>
+    </div>
+  </footer>
+
+  <!-- Floating Book Button -->
+  <a href="book-a-visit.html" class="float-btn">
+    <img src="phone-icon.png" alt="Phone Icon"> Book Us Now
+  </a>
 </body>
 </html>
