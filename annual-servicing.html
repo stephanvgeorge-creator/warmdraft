@@ -1,16 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Annual Servicing — WarmRight Ltd</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annual Boiler Servicing | WarmRight Ltd</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
 <body>
-  <header class="header">
-    <div class="header-inner container"><div class="brand"><img src="assets/images/logo-warmright.png" alt="logo"><div><div class="brand-title">WarmRight Ltd</div><div class="brand-sub">Gas, LPG &amp; Oil</div></div></div><button class="menu-toggle">☰</button><nav class="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a class="call-action call-btn">Click to Call</a></nav></div>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="WarmRight Ltd Logo">
+      <span>WarmRight Ltd</span>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="services.html" class="active">Services ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="breakdowns.html">Breakdowns</a></li>
+            <li><a href="annual-servicing.html" class="active">Annual Servicing</a></li>
+            <li><a href="powerflushing-descaling.html">Powerflushing & Descaling</a></li>
+            <li><a href="unvented-cylinders.html">Unvented Cylinders</a></li>
+            <li><a href="second-opinion.html">Second Opinion Visits</a></li>
+            <li><a href="combi-condensing.html">Combi & Condensing Boilers</a></li>
+            <li><a href="landlord-cp12.html">Landlord’s Gas Safety (CP12)</a></li>
+            <li><a href="homebuyer-report.html">Homebuyer’s Reports</a></li>
+            <li><a href="boiler-installation.html">Boiler Installation</a></li>
+            <li><a href="general-maintenance.html">General & Planned Maintenance</a></li>
+            <li><a href="kitchens-bathrooms.html">Kitchens, Bathrooms & Plumbing</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="general-info.html">General Information ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="common-faults.html">Common Faults</a></li>
+            <li><a href="powerflushing.html">Powerflushing</a></li>
+            <li><a href="combi-boilers.html">Combi Boilers - Are They Worth It?</a></li>
+            <li><a href="manuals.html">Boiler Manuals</a></li>
+            <li><a href="engineers.html">Engineers</a></li>
+            <li><a href="boiler-scrappage.html">Boiler Scrappage Grants</a></li>
+            <li><a href="partners.html">Partners</a></li>
+          </ul>
+        </li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="book-a-visit.html">Book a Visit</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero" style="background-image:url('assets/images/annual-servicing.jpg')"><div class="inner container"><h1>Annual Servicing</h1></div></section>
+  <!-- Banner -->
+  <section class="banner fade-in" style="background-image: url('service-annual.jpg');">
+    <div class="banner-text">
+      <h1>Annual Boiler Servicing</h1>
+      <p>Keep your heating system safe, efficient, and reliable with an annual service.</p>
+    </div>
+  </section>
 
-  <main class="container section"><h2>Annual Boiler Service</h2><p>Our annual service includes safety checks, flue and combustion analysis where required, and a service report. Replace with your content.</p></main>
+  <!-- Content -->
+  <section class="section fade-in">
+    <h2>Why an Annual Service Matters</h2>
+    <p>Regular servicing ensures that your boiler runs efficiently, safely, and lasts longer. 
+    At WarmRight Ltd, our certified engineers perform a full inspection and cleaning of all major components, 
+    identifying early signs of potential issues before they become costly repairs.</p>
 
-  <footer class="footer">© WarmRight Ltd — v1.3</footer>
-  <script src="assets/js/main.js"></script>
+    <h3>Our Annual Service Includes</h3>
+    <ul>
+      <li>Full safety inspection and system performance check</li>
+      <li>Flue analysis and combustion testing</li>
+      <li>Cleaning of burners, heat exchangers, and fans</li>
+      <li>Gas rate and pressure verification</li>
+      <li>Visual leak inspection and control testing</li>
+      <li>Official Gas Safety Record upon completion</li>
+    </ul>
+
+    <p>We recommend booking your annual service between spring and early autumn, 
+    to ensure your heating system is ready for the colder months ahead.</p>
+
+    <a href="book-a-visit.html" class="btn-primary">Book Your Annual Service</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 WarmRight Ltd | Gas Safe Registered: 
+        <a href="https://www.gassaferegister.co.uk" target="_blank">968002</a></p>
+      <img src="gsr-logo.png" alt="Gas Safe Register" class="gsr-logo">
+      <p>General Enquiries: 7am - 6pm, Mon - Sat</p>
+      <p>24/7 Emergencies: <a href="tel:08007566748">0800 756 6748</a></p>
+    </div>
+  </footer>
+
+  <!-- Floating Book Button -->
+  <a href="book-a-visit.html" class="float-btn">
+    <img src="phone-icon.png" alt="Phone Icon"> Book Us Now
+  </a>
 </body>
 </html>
