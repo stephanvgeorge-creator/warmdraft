@@ -1,49 +1,130 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Common Faults - WarmRight Ltd</title><link rel="icon" href="assets/images/favicon.png"><link rel="stylesheet" href="assets/css/style.css"></head><body>
-<header class="header">
-  <div class="header-inner container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Boiler Faults | WarmRight Ltd</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
     <div class="logo">
-      <img src="assets/images/logo-warmright.png" alt="WarmRight logo">
-      <div style="color:#fff">
-        <strong>WarmRight Ltd</strong><div style="font-size:12px;color:#d6ecff">Gas, LPG &amp; Oil</div>
+      <img src="logo.png" alt="WarmRight Ltd Logo">
+      <span>WarmRight Ltd</span>
+    </div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="services.html">Services ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="breakdowns.html">Breakdowns</a></li>
+            <li><a href="annual-servicing.html">Annual Servicing</a></li>
+            <li><a href="powerflushing-descaling.html">Powerflushing & Descaling</a></li>
+            <li><a href="unvented-cylinders.html">Unvented Cylinders</a></li>
+            <li><a href="second-opinion.html">Second Opinion Visits</a></li>
+            <li><a href="combi-condensing.html">Combi & Condensing Boilers</a></li>
+            <li><a href="landlord-cp12.html">Landlord’s Gas Safety (CP12)</a></li>
+            <li><a href="homebuyer-report.html">Homebuyer’s Reports</a></li>
+            <li><a href="boiler-installation.html">Boiler Installation</a></li>
+            <li><a href="general-maintenance.html">General & Planned Maintenance</a></li>
+            <li><a href="kitchens-bathrooms.html">Kitchens, Bathrooms & Plumbing</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="general-info.html" class="active">General Information ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="common-faults.html" class="active">Common Faults</a></li>
+            <li><a href="powerflushing.html">Powerflushing</a></li>
+            <li><a href="combi-boilers.html">Combi Boilers - Are They Worth It?</a></li>
+            <li><a href="manuals.html">Boiler Manuals</a></li>
+            <li><a href="engineers.html">Engineers</a></li>
+            <li><a href="boiler-scrappage.html">Boiler Scrappage Grants</a></li>
+            <li><a href="partners.html">Partners</a></li>
+          </ul>
+        </li>
+        <li><a href="offers.html">Offers</a></li>
+        <li><a href="book-a-visit.html">Book a Visit</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner fade-in" style="background-image: url('common-faults-banner.jpg');">
+    <div class="banner-text">
+      <h1>Common Boiler Faults</h1>
+      <p>Quick tips and professional guidance for the most frequent heating system issues.</p>
+    </div>
+  </section>
+
+  <!-- Main Section -->
+  <section class="section fade-in">
+    <h2>Typical Issues Homeowners Face</h2>
+    <p>Before calling an engineer, you may be able to identify the problem using the information below. 
+    Always refer to your boiler’s manual before attempting any reset or pressure adjustments.</p>
+
+    <div class="tile-grid">
+      <!-- Low Water Pressure -->
+      <div class="tile fade-in">
+        <img src="fault-low-pressure.jpg" alt="Low Water Pressure">
+        <h3>Low Water Pressure</h3>
+        <p>Check your boiler’s pressure gauge. It should read between 1.0 and 1.5 bar. 
+        If it’s lower, you may need to top up using the filling loop as described in your boiler manual.</p>
+      </div>
+
+      <!-- Frozen Condensate Pipe -->
+      <div class="tile fade-in">
+        <img src="fault-frozen-condensate.jpg" alt="Frozen Condensate Pipe">
+        <h3>Frozen Condensate Pipe</h3>
+        <p>In cold weather, the external condensate pipe may freeze. Pour warm (not boiling) water 
+        over the pipe and reset your boiler once thawed.</p>
+      </div>
+
+      <!-- No Heating or Hot Water -->
+      <div class="tile fade-in">
+        <img src="fault-no-heating.jpg" alt="No Heating or Hot Water">
+        <h3>No Heating or Hot Water</h3>
+        <p>Check thermostat settings, power supply, and system pressure. If the issue persists, 
+        contact a Gas Safe engineer to inspect the diverter valve or ignition components.</p>
+      </div>
+
+      <!-- Radiators Not Heating Evenly -->
+      <div class="tile fade-in">
+        <img src="fault-radiators.jpg" alt="Radiators Not Heating Evenly">
+        <h3>Radiators Not Heating Evenly</h3>
+        <p>Cold spots may indicate trapped air or sludge buildup. Bleed your radiators or consider 
+        a powerflush to improve system performance.</p>
+      </div>
+
+      <!-- Boiler Keeps Turning Off -->
+      <div class="tile fade-in">
+        <img src="fault-boiler-off.jpg" alt="Boiler Keeps Turning Off">
+        <h3>Boiler Keeps Turning Off</h3>
+        <p>This can be caused by low pressure, a faulty thermostat, or blocked condensate pipe. 
+        Check for error codes and contact an engineer if unsure.</p>
       </div>
     </div>
-    <button class="nav-toggle" aria-label="toggle menu">☰</button>
-    <nav class="nav" aria-label="Main menu">
-      <a href="index.html">Home</a>
-      <div class="dropdown"><a href="services.html">Services ▾</a>
-        <div class="dropdown-menu">
-          <a href="breakdowns.html">Breakdowns</a>
-          <a href="annual-servicing.html">Annual Servicing</a>
-          <a href="powerflushing-descaling.html">Powerflushing &amp; Descaling</a>
-          <a href="unvented-cylinders.html">Unvented Cylinders</a>
-          <a href="combination-condensing.html">Combination &amp; Condensing</a>
-          <a href="landlord-cp12.html">Landlord CP12</a>
-          <a href="boiler-installation.html">Boiler Installation</a>
-          <a href="general-maintenance.html">General &amp; Planned Maintenance</a>
-          <a href="kitchens-bathrooms.html">Kitchens, Bathrooms &amp; Plumbing</a>
-          <a href="energy-efficiency.html">Energy Efficiency Surveys</a>
-        </div>
-      </div>
-      <div class="dropdown"><a href="general-info.html">General Info ▾</a>
-        <div class="dropdown-menu">
-          <a href="common-faults.html">Common Faults</a>
-          <a href="manuals.html">Manuals</a>
-          <a href="engineers.html">Engineers</a>
-          <a href="partners.html">Partners</a>
-        </div>
-      </div>
-      <a href="book-a-visit.html">Book a Visit</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a class="call-action call-btn">Click to Call</a>
-    </nav>
-  </div>
-</header>
+  </section>
 
-<section class="hero" style="background-image:url('assets/images/common-faults.jpg')"><div class="inner container"><h1>Common Faults</h1></div></section>
-<main class="container section">
-<h2>Common Faults</h2><div class='tiles'><div class='card'><div class='card-body'><h3>Low Water Pressure</h3><p>Check your boiler manual to find your filling value. Adjust accordingly and reset.</p></div></div><div class='card'><div class='card-body'><h3>No Hot Water</h3><p>Check thermostat settings and pilot/light. Call us if unsure.</p></div></div></div>
-</main>
-<footer class="footer container">© WarmRight Ltd — Gas Safe Register — General Enquiries 7am - 6pm, Monday to Saturday | 24/7 Emergency: 08007566736<div class="version-tag">WarmRight Ltd v1.0</div></footer>
-<script src="assets/js/main.js"></script></body></html>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 WarmRight Ltd | Gas Safe Registered: 
+        <a href="https://www.gassaferegister.co.uk" target="_blank">968002</a></p>
+      <img src="gsr-logo.png" alt="Gas Safe Register" class="gsr-logo">
+      <p>General Enquiries: 7am - 6pm, Mon - Sat</p>
+      <p>24/7 Emergencies: <a href="tel:08007566748">0800 756 6748</a></p>
+    </div>
+  </footer>
+
+  <!-- Floating Book Button -->
+  <a href="book-a-visit.html" class="float-btn">
+    <img src="phone-icon.png" alt="Phone Icon"> Book Us Now
+  </a>
+</body>
+</html>
