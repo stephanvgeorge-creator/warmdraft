@@ -1,8 +1,4 @@
-/* ===============================
-   WarmRight Ltd v2.3 — style.css
-   =============================== */
-
-/* RESET + BASE */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
@@ -10,329 +6,201 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #002147;
+  background-color: #f8f9fb;
   line-height: 1.6;
-  color: #222;
-  background-color: #f9f9f9;
-  overflow-x: hidden;
 }
 
-/* HEADER & NAVBAR */
+/* === NAVBAR === */
 .navbar {
+  background-color: #004aad;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #004a99;
-  color: #fff;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  color: white;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 100;
 }
 
-.logo img {
-  height: 40px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-.logo span {
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.nav-links ul {
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
-
-.nav-links ul li {
-  position: relative;
-  margin-left: 1.5rem;
-}
-
-.nav-links ul li a {
+.navbar a {
+  color: white;
   text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  transition: color 0.3s;
+  margin: 0 12px;
+  font-weight: 500;
 }
 
-.nav-links ul li a:hover,
-.nav-links ul li a.active {
-  color: #ffb703;
+.navbar a:hover {
+  text-decoration: underline;
 }
 
-/* Dropdown Menu */
+/* Logo and title link home */
+.navbar .logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+.navbar .logo-link img {
+  height: 35px;
+  margin-right: 8px;
+}
+.navbar .logo-link span {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* === CALL NOW BUTTON === */
+.call-now {
+  margin-left: auto;
+  background-color: #ffb200;
+  color: #003366;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.call-now:hover {
+  background-color: #ffd24d;
+}
+
+/* === DROPDOWN === */
+.dropdown {
+  position: relative;
+}
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #005bbb;
-  border-radius: 4px;
-  min-width: 240px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  background-color: #004aad;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  z-index: 10;
 }
-
-.dropdown-content li {
-  margin: 0;
-  width: 100%;
-}
-
 .dropdown-content a {
+  color: white;
   display: block;
-  padding: 0.8rem 1rem;
-  color: #fff;
-  font-size: 0.95rem;
+  padding: 10px 16px;
 }
-
 .dropdown-content a:hover {
-  background-color: #0077cc;
+  background-color: #003580;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* MOBILE MENU */
+/* === HAMBURGER MENU === */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
 @media (max-width: 768px) {
-  .nav-links ul {
-    flex-direction: column;
-    background: #004a99;
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: -100%;
-    transition: left 0.3s ease;
-  }
-
-  .nav-links ul.open {
-    left: 0;
-  }
-
-  .nav-links ul li {
-    margin: 1rem 0;
-  }
-
-  .menu-toggle {
+  .hamburger {
     display: block;
-    cursor: pointer;
+  }
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: #004aad;
+    width: 100%;
+  }
+  .navbar-links.show {
+    display: flex;
+  }
+  .call-now {
+    margin: 10px;
   }
 }
 
-/* BANNER */
-.banner {
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 6rem 2rem;
-  text-align: center;
+/* === HERO BANNER === */
+.hero-banner {
+  height: 350px;
+  background: url('../images/banner.jpg') center/cover no-repeat;
+}
+@media (min-width: 1024px) {
+  .hero-banner {
+    height: 450px;
+  }
 }
 
-.banner-text h1 {
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.banner-text p {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-}
-
-/* TILE GRID */
-.section {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.section h2 {
-  color: #004a99;
-  margin-bottom: 2rem;
-}
-
-.tile-grid {
+/* === SERVICE TILES === */
+.tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
+  justify-items: center;
+  padding: 2rem;
 }
-
 .tile {
-  background: #fff;
+  background: white;
+  padding: 20px;
   border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(15px);
 }
-
 .tile.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-.tile h3 {
-  color: #004a99;
-  margin-bottom: 0.5rem;
+.tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-
 .tile p {
-  font-size: 0.95rem;
-  color: #444;
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 8px;
 }
 
-/* FOOTER */
-.footer {
-  background-color: #003b7a;
-  color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.footer a {
-  color: #ffb703;
-  text-decoration: none;
-}
-
-.footer .gsr-logo {
-  height: 40px;
-  margin-top: 10px;
-}
-
-/* FLOATING BOOK BUTTON */
-.float-btn {
+/* === BOOK NOW BUTTON === */
+.book-now {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: #ffb703;
-  color: #000;
-  font-weight: bold;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffb200;
+  color: #003366;
   border-radius: 50px;
-  padding: 0.8rem 1.4rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  z-index: 1000;
-  transition: background-color 0.3s;
-}
-
-.float-btn:hover {
-  background-color: #ffd166;
-}
-
-.float-btn img {
-  width: 20px;
-}
-
-/* FORMS */
-form {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  max-width: 600px;
-  margin: 2rem auto;
-  text-align: left;
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
+  padding: 12px 20px;
   font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
-  width: 100%;
-  padding: 0.7rem;
-  margin-top: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-form button {
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.2rem;
-  background-color: #004a99;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-form button:hover {
-  background-color: #0077cc;
-}
-
-/* MODAL FORM */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  display: inline-flex;
   align-items: center;
-  z-index: 2000;
+  gap: 8px;
+}
+.book-now img {
+  height: 18px;
+}
+.book-now:hover {
+  background-color: #ffd24d;
 }
 
-.modal-content {
-  background: #fff;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 700px;
-  padding: 2rem;
-  position: relative;
-  animation: fadeIn 0.5s ease;
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #444;
-}
-
-/* FADE ANIMATIONS */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.9);}
-  to {opacity: 1; transform: scale(1);}
-}
-
-/* THANK YOU PAGE */
-.thank-you {
+/* === FOOTER === */
+footer {
+  background-color: #004aad;
+  color: white;
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 20px;
 }
-
-.thank-you h1 {
-  color: #004a99;
+footer a {
+  color: #ffb200;
+  text-decoration: none;
 }
-
-.thank-you p {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+footer .gsr-logo {
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+footer a:hover {
+  opacity: 0.8;
 }
