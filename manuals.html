@@ -58,56 +58,57 @@
   <section class="banner fade-in" style="background-image: url('manuals-banner.jpg');">
     <div class="banner-text">
       <h1>Boiler Manuals</h1>
-      <p>Access manufacturer boiler manuals and guides instantly.</p>
+      <p>Access guides and manuals for your appliances or request a specific one below.</p>
     </div>
   </section>
 
-  <!-- Main Section -->
+  <!-- Manual Information -->
   <section class="section fade-in">
     <h2>Find Your Boiler Manual</h2>
-    <p>Having the correct boiler manual can help you identify faults, reset instructions, and part numbers.  
-      You can search and download manuals from our trusted partner below.</p>
+    <p>Looking for a boiler manual? Visit <a href="https://www.freeboilermanuals.com/" target="_blank" class="link">freeboilermanuals.com</a> — an excellent resource for free downloadable manuals from a wide range of manufacturers.</p>
+  </section>
 
-    <div class="manuals-container fade-in">
-      <div class="tile large fade-in">
-        <img src="manuals-freeboilermanuals.jpg" alt="Free Boiler Manuals">
-        <h3>Free Boiler Manuals</h3>
-        <p>Visit our trusted partner for the UK’s largest online collection of boiler manuals.</p>
-        <a href="https://www.freeboilermanuals.com/" target="_blank" class="btn">Visit FreeBoilerManuals.com</a>
-      </div>
-    </div>
+  <!-- Manual Request Form -->
+  <section class="section fade-in">
+    <h2>Request a Manual</h2>
+    <p>If you can’t find your manual online, complete the form below and we’ll send it to you.</p>
 
-    <h2>Can’t Find Your Manual?</h2>
-    <p>If your appliance isn’t listed, fill in the form below and we’ll help locate it for you.</p>
-
-    <!-- Manual Request Form -->
-    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form fade-in">
+    <form action="https://formspree.io/f/xjkalnqv" method="POST" enctype="multipart/form-data" class="contact-form">
       <fieldset>
-        <legend>Request Missing Manual</legend>
+        <legend>Contact Details</legend>
         <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
+        <input type="text" id="name" name="name" required>
 
         <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <input type="email" id="email" name="email" required>
 
-        <label for="make">Appliance Make:</label>
-        <input type="text" id="make" name="make" placeholder="e.g. Worcester, Vaillant" required>
-
-        <label for="model">Model Number:</label>
-        <input type="text" id="model" name="model" placeholder="e.g. Greenstar 28i Junior" required>
-
-        <label for="info">Additional Information:</label>
-        <textarea id="info" name="info" rows="4" placeholder="Any additional details or fault codes"></textarea>
-
-        <button type="submit" class="btn">Submit Request</button>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone">
       </fieldset>
+
+      <fieldset>
+        <legend>Appliance Details</legend>
+        <label for="make">Appliance Make:</label>
+        <input type="text" id="make" name="make" required>
+
+        <label for="model">Appliance Model:</label>
+        <input type="text" id="model" name="model" required>
+
+        <label for="image">Attach Image (optional):</label>
+        <input type="file" id="image" name="image" accept="image/*">
+
+        <label for="details">Additional Information:</label>
+        <textarea id="details" name="details" rows="4" placeholder="Any other details that may help..."></textarea>
+      </fieldset>
+
+      <button type="submit" class="btn">Submit Request</button>
     </form>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2025 WarmRight Ltd | Gas Safe Registered: 
+      <p>&copy; 2025 WarmRight Ltd | Gas Safe Registered:
         <a href="https://www.gassaferegister.co.uk" target="_blank">968002</a></p>
       <img src="gsr-logo.png" alt="Gas Safe Register" class="gsr-logo">
       <p>General Enquiries: 7am - 6pm, Mon - Sat</p>
